@@ -1,14 +1,24 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      ion-icon Safari Bug
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <p>[Working as expected]: This is a common Ionicon</p>
+    <ion-icon name="alarm"></ion-icon>
+    <p>[<b>NOT</b> working as expected]: This is a custom ion-icon with gradient color that does not appear in Safari browser</p>
+    <ion-icon src="/assets/rocket.svg"></ion-icon>
+    <p>[<b>NOT</b> working as expected]: This is the above icon, but simplified through optimizer that loses its color in Safari</p>
+    <!-- This is the optimizer https://jakearchibald.github.io/svgomg/ -->
+    <ion-icon src="/assets/rocket-simple.svg"></ion-icon>
+    <p>[Working as expected]: This is the original rocket SVG, but used as background-image CSS property and not ion-icon element</p>
+    <div class="css-icon"></div>
   </div>
 </ion-content>
+<ion-footer>
+  <div class="ion-padding"><b>Open this page in both Chrome and Safari.</b></div>
+</ion-footer>
